@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 06 Loop With Range</title>
+</head>
+<body>
+   <p>Click this button to start Loop with range</p>
+   <button onclick="loopWithRange()">Start Loop With Range</button>
+   <p id="result"></p>
+
+   <script>
+      function loopWithRange() {
+         let startRange = prompt('Input Pertama : Masukkan Angka Awal');
+         while (isNaN(startRange % 2)) {
+            alert('Please enter a numbers not a characters or string');
+            startRange = prompt('Input Pertama : Masukkan Angka Awal');
+         };
+
+         let endRange = prompt('Input Kedua : Masukkan Angka Akhir');
+         while (isNaN(endRange % 2)) {
+            alert('Please enter a numbers not a characters or string');
+            endRange = prompt('Input Kedua : Masukkan Angka Akhir');
+         };
+
+         let arr = [];
+
+         for (let i = startRange; i <= endRange; i++) {
+            arr.push(i);
+         };
+
+         let str = arr.join(', ');
+         document.getElementById('result').innerHTML = `Loop Range nya adalah : ${str}`;
+      };
+   </script>
+</body>
+</html>

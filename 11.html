@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 11 Array Remover</title>
+</head>
+<body>
+   <p>Click this button to start remove jambu from array</p>
+   <button onclick="removeFromArray()">Start remove from array</button>
+   <p id="result"></p>
+
+   <script>
+      function removeFromArray() {
+
+         const fruits = ['Jeruk', 'Pepaya', 'Jambu', 'Anggur', 'Melon'];
+
+         let strFruits = fruits.join(', ');
+         document.getElementById('result').innerHTML = `Starting Array : [${strFruits}] <br>`;
+
+         fruits.splice(2, 1);
+         
+         let strFruitsAfter = fruits.join(', ');
+
+         document.getElementById('result').innerHTML += `After Remove Array : [${strFruitsAfter}]`;
+      };
+   </script>
+</body>
+</html>

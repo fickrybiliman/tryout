@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 05 Film Rating</title>
+</head>
+<body>
+   <p>Click this button to start specify Film Rating</p>
+   <button onclick="filmRating()">Start Specify Film Rating</button>
+   <p id="result"></p>
+
+   <script>
+      function filmRating() {
+         let input = Number(prompt('Masukkan Usia'));
+         let rating = '';
+
+         while (isNaN(input % 2)) {
+            alert('Please enter a numbers not a characters or string');
+            input = prompt('Masukkan Usia');
+         };
+
+         switch (true) {
+            case (input >= 21) :
+               rating = 'DEWASA';
+               break;
+            case (input >= 13) :
+               rating = 'REMAJA';
+               break;
+            case (input >= 9) :
+               rating = 'BIMBINGAN ORANG TUA';
+               break;
+            case (input < 9) :
+               rating = 'SEMUA USIA';
+               break;
+         }
+
+         document.getElementById('result').innerHTML = `Rating Film adalah : ${rating}`;
+      };
+   </script>
+</body>
+</html>

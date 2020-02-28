@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 02 Grade</title>
+</head>
+<body>
+   <p>Click this button to start finding a grade by your score </p>
+   <button onclick="defineGrade()">Start Define Grade By Your Score</button>
+   <p id="result"></p>
+
+   <script>
+      function defineGrade() {
+         let input = Number(prompt('Masukkan angka atau nilai anda'));
+         let grade = '';
+
+         switch (true) {
+            case (input >= 90):
+               grade = 'A';
+               break;
+            case (input >= 80):
+               grade = 'B';
+               break;
+            case (input >= 70):
+               grade = 'C';
+               break;
+            case (input >= 60):
+               grade = 'D';
+               break;
+            case (input <= 59):
+               grade = 'E';
+               break;
+            default :
+               alert('Please enter a numbers not a characters or string');
+               break;
+         };
+
+         document.getElementById('result').innerHTML = `Grade anda adalah : ${grade}`;
+      }
+   </script>
+</body>
+</html>

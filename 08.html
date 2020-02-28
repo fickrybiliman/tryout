@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 08 Ganjil / Genap / Kelipatan</title>
+</head>
+<body>
+   <p>Click this button to start Print number from 1 to 1000</p>
+   <button onclick="loopOddNumbers()">Start Print Odd Number from 1 to 1000</button>
+   <p id="result"></p>
+
+   <script>
+      function loopOddNumbers() {
+
+         let arr = [];
+
+         for (let i = 1; i <= 1000; i++) {
+            if (i % 100 === 0) {
+               arr.push(`${i}. Kelipatan Seratus`);
+            } else if (i % 2 !== 0) {
+               if (i % 5 === 0) {
+                  arr.push(`${i}. Ganjil Kelipatan Lima`);
+               }
+               arr.push(`${i}. Ganjil`);
+            } else if (i % 2 === 0) {
+               if (i % 5 === 0) {
+                  arr.push(`${i}. Genap Kelipatan Lima`);
+               }
+               arr.push(`${i}. Genap`);
+            }
+         };
+
+         let str = arr.join('<br>');
+         document.getElementById('result').innerHTML = 'Print numbers from 1 to 1000 : <br>' + str;
+      };
+   </script>
+</body>
+</html>

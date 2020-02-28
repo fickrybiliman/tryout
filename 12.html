@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 12 Mirror</title>
+</head>
+<body>
+   <p>Click this button to start mirroring characters</p>
+   <button onclick="mirroring()">Start mirroring characters</button>
+   <p id="result"></p>
+
+   <script>
+      function mirroring() {
+
+         let input = prompt('Masukkan karakter yang ingin anda mirror');
+
+         let mirror = input + input.split('').reverse().join('');
+
+         document.getElementById('result').innerHTML = `Starting Characters : ${input} <br>`;
+
+         document.getElementById('result').innerHTML += `After Mirroring Characters : ${mirror}`;
+      };
+   </script>
+</body>
+</html>

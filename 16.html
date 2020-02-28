@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 16 Palindrome</title>
+</head>
+<body>
+   <p>Click this button to start palindrome</p>
+   <button onclick="palindrome()">Start input characters</button>
+   <p id="result"></p>
+
+   <script>
+      function palindrome() {
+
+         let input = prompt('Masukkan Characters');
+         let joinedInput = input.match(/[a-z]/gi).join('').toLowerCase();
+         let reversedInput = input.match(/[a-z]/gi).reverse().join('').toLowerCase();
+
+         console.log(joinedInput);
+         console.log(reversedInput);
+         let isPalindrome = (joinedInput === reversedInput) ? 'Palindrome' : 'Bukan Palindrome';
+         document.getElementById('result').innerHTML = `Character yang dimasukkan : ${input} <br>`;
+
+         document.getElementById('result').innerHTML += `Apakah character tersebut adalah kata palindrome : ${isPalindrome}`;
+      };
+   </script>
+</body>
+</html>

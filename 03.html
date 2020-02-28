@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 03 Ganjil atau Genap?</title>
+</head>
+<body>
+   <p>Click this button to start determining a number, is an odd or even number?</p>
+   <button onclick="evenOrOdd()">Start Determining a Number, is an Odd or Even number</button>
+   <p id="result"></p>
+
+   <script>
+      function evenOrOdd() {
+         let input = prompt('Masukkan Angka');
+         
+         while (isNaN(input % 2)) {
+            alert('Please enter a numbers not a characters or string');
+            input = prompt('Masukkan Angka');
+         };
+
+         let determine = input % 2 === 0 ? 'Even (Genap)' : 'Odd (Ganjil)';
+
+         document.getElementById('result').innerHTML = `Angka yang anda masukkan adalah bilangan : ${determine}`;
+      };
+   </script>
+</body>
+</html>

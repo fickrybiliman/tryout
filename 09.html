@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 09 Membalikkan Kata</title>
+</head>
+<body>
+   <p>Click this button to start reverse a words</p>
+   <button onclick="reverseSentence()">Start reverse words</button>
+   <p id="result"></p>
+
+   <script>
+      function reverseSentence() {
+
+         let input = prompt('Masukkan Kata yang ingin di balikkan')
+         let reversed = input.split(' ').reverse().join(' ');
+
+         document.getElementById('result').innerHTML = `Kata yang dimasukkan : ${input} <br>`;
+         document.getElementById('result').innerHTML += `Kata setelah dibalikkan : ${reversed}`;
+      };
+   </script>
+</body>
+</html>

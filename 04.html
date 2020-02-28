@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 04 Kabisat</title>
+</head>
+<body>
+   <p>Click this button to start determining leap year</p>
+   <button onclick="kabisat()">Start Determining Leap (Kabisat) Years</button>
+   <p id="result"></p>
+
+   <script>
+      function kabisat() {
+         let input = prompt('Masukkan Angka Tahun');
+         let determine = '';
+         while (isNaN(input % 2)) {
+            alert('Please enter a numbers not a characters or string');
+            input = prompt('Masukkan Angka Tahun');
+         };
+
+         if (input % 400 === 0) {
+            determine = 'Kabisat';
+         } else {
+            if (input % 100 === 0) {
+               determine = 'Bukan Kabisat';
+            } else {
+               if (input % 4 === 0) {
+                  determine = 'Kabisat';
+               } else {
+                  determine = 'Bukan Kabisat';
+               }
+            }
+         }
+
+         document.getElementById('result').innerHTML = `Tahun yang anda masukkan adalah tahun : ${determine}`;
+      };
+   </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 13 Array To String</title>
+</head>
+<body>
+   <p>Click this button to start converting array to string</p>
+   <button onclick="arrayToString()">Start convert array to string</button>
+   <p id="result"></p>
+
+   <script>
+      function arrayToString() {
+
+         const fruits = [
+            {name: 'Pepaya', price: 3000},
+            {name: 'Jagung', price: 2000},
+            {name: 'Mengkudu', price: 4000},
+            {name: 'Kiwi', price: 6000},
+         ];
+
+         let str = '';
+         let objKeys;
+
+         for (let i = 0; i < fruits.length; i++) {
+            objKeys = Object.keys(fruits[i]);
+            for (fruit in fruits[i]) {
+               if (fruit !== objKeys[objKeys.length - 1]) {
+                  str += fruits[i][fruit];
+                  str += ': ';
+               } else {
+                  str += fruits[i][fruit];
+               }
+            }
+
+            if (i !== fruits.length - 1) {
+               str += '<br>';
+            }
+         }
+
+         document.getElementById('result').innerHTML = `Original Array of Object : <br>`;
+         document.getElementById('result').innerHTML += `${JSON.stringify(fruits)} <br>`;
+
+         document.getElementById('result').innerHTML += `<br>`;
+
+         document.getElementById('result').innerHTML += `Converted Array To String : <br>`;
+         document.getElementById('result').innerHTML += `${str}`;
+      };
+   </script>
+</body>
+</html>

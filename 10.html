@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 10 Add to Array</title>
+</head>
+<body>
+   <p>Click this button to start add to array</p>
+   <button onclick="addToArray()">Start add to array</button>
+   <p id="result"></p>
+
+   <script>
+      function addToArray() {
+
+         const stuff = ['Meja', 'Buku', 'Topi', 'Baju', 'Kayu'];
+
+         let strStuff = stuff.join(', ');
+         
+         document.getElementById('result').innerHTML = `Starting Array : [${strStuff}] <br>`;
+
+         stuff.unshift('Handuk');
+         stuff.push('Celana');
+         
+         let strStuffAfter = stuff.join(', ');
+
+         document.getElementById('result').innerHTML += `After Add Array : [${strStuffAfter}]`;
+      };
+   </script>
+</body>
+</html>

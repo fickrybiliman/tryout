@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 15 Penjumlahan</title>
+</head>
+<body>
+   <p>Click this button to start calculate</p>
+   <p>Finish calculator with input character of '='</p>
+   <button onclick="calculate()">Start input number</button>
+   <p id="result"></p>
+
+   <script>
+      function calculate() {
+
+         let arrInput = [];
+
+         let input = prompt('Masukkan Angka');
+         arrInput.push(input);
+         while(input !== '=') {
+            
+            if (isNaN(input % 2)) {
+               alert('Anda tidak memasukkan angka');
+            }
+            
+            input = prompt('Masukkan Angka');
+            arrInput.push(input);
+         }
+
+         let strArrInput = arrInput.join(', ');
+         let counting = arrInput.filter(x => Number(x)).map(y => Number(y)).reduce((acc, curVal) => acc + curVal, 0);
+
+         alert(`Hasil Penjumlahan Angka adalah : ${counting}`);
+
+         document.getElementById('result').innerHTML = `Angka dan character yang dimasukkan : ${strArrInput} <br>`;
+
+         document.getElementById('result').innerHTML += `Calculate Numbers : ${counting}`;
+      };
+   </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tryout 07 Cetak 50 Bilangan Ganjil</title>
+</head>
+<body>
+   <p>Click this button to start Print Odd number from 1 to 100</p>
+   <button onclick="loopOddNumbers()">Start Print Odd Number from 1 to 100</button>
+   <p id="result"></p>
+
+   <script>
+      function loopOddNumbers() {
+
+         let arr = [];
+
+         for (let i = 1; i <= 100; i += 2) {
+            arr.push(i);
+         };
+
+         let str = arr.join(', ');
+         document.getElementById('result').innerHTML = 'Print odd numbers from 1 to 100 : <br>' + str;
+      };
+   </script>
+</body>
+</html>
